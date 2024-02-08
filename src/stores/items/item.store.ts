@@ -7,6 +7,7 @@ import { ItemService } from "../../services/item.service";
 export interface ItemState {
     items: ItemResponse[],
     getAllItems: () => void;
+    cretateItem: (item: ItemResponse) => void;
 }
 
 const storeApi: StateCreator<ItemState> = (set) =>({
@@ -14,11 +15,20 @@ const storeApi: StateCreator<ItemState> = (set) =>({
     getAllItems: async() => {
         try {
             const res = await ItemService.getAllItems();
-            let itemsArray = Array.isArray(res) ? res : [res]; // Envuelve en un array si es un solo elemento
+            let itemsArray = Array.isArray(res) ? res : [res];
             set({ items: itemsArray }); 
         } catch (error) {
             throw new Error("Error al obtener los items");
         }        
+    },
+    cretateItem: async(item: ItemResponse) => {
+        try {
+            const res = await ItemService.createItem(item);
+            let itemsArray = Array.isArray(res)? res : [res];
+            set({ items: itemsArray }); 
+        } catch (error) {
+            throw new Error("Error al crear el item");
+        }
     }
 });
 

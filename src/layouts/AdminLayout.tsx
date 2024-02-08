@@ -12,7 +12,7 @@ export const AdminLayout = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-10">
       <Header />
-      <main className="lg:w-[75rem] flex flex-col items-center gap-4">
+      <main className="w-full xl:w-[75rem] flex flex-col items-center gap-4 pb-10">
         {
           user?.name && <h2 className="font-bold uppercase text-xl">Bienvenido <span className="font-extrabold text-indigo-600">{user?.name}</span></h2>
         }

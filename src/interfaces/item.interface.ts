@@ -1,11 +1,11 @@
 export interface ItemResponse {
-  _id:          string;
+  _id?:          string;
   name:         string;
   color:        string;
   gas:          string;
-  year:         number;
+  year:         string;
   description?: string;
-  price:        number;
+  price:        string;
   createdAt?:   string;
   updatedAt?:   string;
 }

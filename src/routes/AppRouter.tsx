@@ -3,6 +3,7 @@ import { AuthLayout } from "../layouts/AuthLayout";
 import { LoginPage } from "../pages/LoginPage";
 import { HomePage } from "../pages/HomePage";
 import { AdminLayout } from "../layouts/AdminLayout";
+import { NewProduct } from "../pages/NewProduct";
 
 export const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter = () => {
 
         <Route path="/" element={<AdminLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/new-product" element={<NewProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>

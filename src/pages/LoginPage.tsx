@@ -28,7 +28,7 @@ export const LoginPage = () => {
         ...prevState,
         [name]: value
     }));
-}
+  }
 
   return (
     <>
