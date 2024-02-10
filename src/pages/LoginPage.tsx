@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useAuthStore } from "../stores";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 export const LoginPage = () => {
@@ -32,9 +32,9 @@ export const LoginPage = () => {
 
   return (
     <>
-      <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
+      <h2 className="text-xl md:text-2xl font-bold leading-tight mt-12 text-gray-600 uppercase">
         Inicia Sesión
-      </h1>
+      </h2>
       <form className="mt-6" onSubmit={handleSubmit}>
         <div>
           <label className="block text-gray-700">Correo Electrónico</label>
@@ -60,11 +60,14 @@ export const LoginPage = () => {
             onChange={handleChange}
           />
         </div>
+        <p className="mt-2 text-gray-500">
+          ¿No tienes una cuenta? <Link to={"register"} className="text-indigo-600 underline">Crear Cuenta</Link>
+        </p>
         <button
           type="submit"
-          className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg px-4 py-3 mt-6"
+          className="w-full block bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-lg px-4 py-3 mt-6"
         >
-          Log In
+          Acceder
         </button>
       </form>
     </>

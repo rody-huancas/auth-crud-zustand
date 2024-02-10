@@ -7,7 +7,7 @@ export const AdminLayout = () => {
   const user = useAuthStore((state) => state.user);
 
   // if (authStatus === "pending") return <div>Cargando...</div>;
-  if (authStatus === "unauthorized") return <Navigate to="/auth/login" />;
+  if (authStatus === "unauthorized") return <Navigate to="/auth" />;
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">

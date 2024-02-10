@@ -4,18 +4,20 @@ import { LoginPage } from "../pages/LoginPage";
 import { HomePage } from "../pages/HomePage";
 import { AdminLayout } from "../layouts/AdminLayout";
 import { NewProduct } from "../pages/NewProduct";
+import { RegisterUser } from "../pages/RegisterUser";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/auth/login" element={<AuthLayout />}>
+        <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<LoginPage />} />
+          <Route path="register" element={<RegisterUser />} />
         </Route>
 
         <Route path="/" element={<AdminLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="/new-product" element={<NewProduct />} />
+          <Route path="new-product" element={<NewProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>

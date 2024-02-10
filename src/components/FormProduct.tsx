@@ -27,7 +27,6 @@ export const FormProduct = () => {
     }));
   };
   
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, color, gas, year, description, price } = items;
