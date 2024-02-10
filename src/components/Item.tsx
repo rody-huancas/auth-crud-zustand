@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { formatDate } from "../helpers/helpers";
 import { ItemResponse } from "../interfaces";
+import { useItemStore } from "../stores";
 
 export const Item= ({item}: {item: ItemResponse}) => {
+
+  const deleteItem = useItemStore(state => state.deleteItem);
+
   return (
     <div className="bg-white shadow-lg p-5 rounded-xl w-72">
       <div className="flex flex-col items-center gap-2">
@@ -30,7 +34,7 @@ export const Item= ({item}: {item: ItemResponse}) => {
       </div>
       <div className="w-full flex items-center justify-between gap-2 mt-3">
         <Link to={""} className="bg-indigo-600 text-white rounded-xl py-2 px-4">Editar</Link>
-        <button className="bg-red-600 text-white rounded-xl py-2 px-4">Eliminar</button>
+        <button onClick={() => deleteItem(`${item._id}`)} className="bg-red-600 text-white rounded-xl py-2 px-4">Eliminar</button>
       </div>
     </div>
   );

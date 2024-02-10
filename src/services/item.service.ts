@@ -30,4 +30,18 @@ export class ItemService {
       throw new Error("Error al crear el item");
     }
   }
+
+  static deleteItem = async(id: string) => {
+    try {
+      const { data } = await configApi.delete(`/item/${id}`);
+      return data;
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        console.log(error.response?.data);
+        throw new Error(error.response?.data);
+      }
+      console.log(error);
+      throw new Error("Error al eliminar el item");
+    }
+  }
 }
