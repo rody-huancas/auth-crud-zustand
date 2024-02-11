@@ -4,7 +4,6 @@ import { ItemResponse } from "../interfaces";
 import { useItemStore } from "../stores";
 
 export const Item= ({item}: {item: ItemResponse}) => {
-
   const deleteItem = useItemStore(state => state.deleteItem);
 
   return (
@@ -33,7 +32,7 @@ export const Item= ({item}: {item: ItemResponse}) => {
         </p>
       </div>
       <div className="w-full flex items-center justify-between gap-2 mt-3">
-        <Link to={""} className="bg-indigo-600 text-white rounded-xl py-2 px-4">Editar</Link>
+        <Link to={`/edit-product/${item._id}`} className="bg-indigo-600 text-white rounded-xl py-2 px-4">Editar</Link>
         <button onClick={() => deleteItem(`${item._id}`)} className="bg-red-600 text-white rounded-xl py-2 px-4">Eliminar</button>
       </div>
     </div>

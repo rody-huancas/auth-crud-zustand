@@ -5,6 +5,7 @@ import { HomePage } from "../pages/HomePage";
 import { AdminLayout } from "../layouts/AdminLayout";
 import { NewProduct } from "../pages/NewProduct";
 import { RegisterUser } from "../pages/RegisterUser";
+import { EditProduct } from "../pages/EditProduct";
 
 export const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRouter = () => {
         <Route path="/" element={<AdminLayout />}>
           <Route index element={<HomePage />} />
           <Route path="new-product" element={<NewProduct />} />
+          <Route path="edit-product/:id" element={<EditProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>
