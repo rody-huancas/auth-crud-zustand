@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuthStore } from "../stores";
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const AdminLayout = () => {
   const authStatus = useAuthStore((state) => state.status);
@@ -18,6 +19,7 @@ export const AdminLayout = () => {
         }
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
